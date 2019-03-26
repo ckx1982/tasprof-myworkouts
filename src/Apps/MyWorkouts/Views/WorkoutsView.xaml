@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:templates="clr-namespace:Tasprof.Apps.MyWorkouts.Views.Templates"
+             x:Class="Tasprof.Apps.MyWorkouts.Views.WorkoutsView">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ListView ItemsSource="{Binding Workouts}" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <templates:WorkoutTemplate/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Image Source="Resources\add.png"  HeightRequest="75" WidthRequest="75" Margin="15,15,25,15" BackgroundColor="Transparent"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   AbsoluteLayout.LayoutBounds="1.0,1.0,-1,-1" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddWorkoutCommand}">
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

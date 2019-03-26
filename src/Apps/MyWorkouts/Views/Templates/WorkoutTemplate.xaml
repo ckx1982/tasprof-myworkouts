@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tasprof.Apps.MyWorkouts.Views.Templates.WorkoutTemplate">
+  <ContentView.Content>
+        <Grid ColumnSpacing="0" RowSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Text="{Binding WorkoutDate, StringFormat='{0:MM dd yyyy}'}" Style="{StaticResource GridLabel}" LineHeight="100" />
+            <Label Grid.Column="1" Text="{Binding WorkoutLocation}" Style="{StaticResource GridLabel}" LineHeight="100" />
+        </Grid>
+  </ContentView.Content>
+</ContentView>

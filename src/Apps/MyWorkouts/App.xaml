@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Tasprof.Apps.MyWorkouts.Converters;assembly=Tasprof.Apps.MyWorkouts"
+             x:Class="Tasprof.Apps.MyWorkouts.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            
+             <!--Converters--> 
+            <converters:InvertBoolConverter x:Key="InvertBoolConverter"></converters:InvertBoolConverter>
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter"></converters:FirstValidationErrorConverter>
+
+            <Color x:Key="LabelColor">#ff0000</Color>
+
+             <!--Label Styles--> 
+            <Style x:Key="GridLabel" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Left"></Setter>
+                <Setter Property="FontFamily" Value="Verdana"></Setter>
+                <Setter Property="FontSize" Value="Medium"></Setter>
+            </Style>
+
+            <Style x:Key="FormLabel" TargetType="Label">
+                <Setter Property="Margin" Value="20,5,20,5"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Left"></Setter>
+               
+                <Setter Property="FontSize" Value="Medium"></Setter>
+            </Style>
+
+            <Style x:Key="StandardLabel" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="FontFamily" Value="Verdana"></Setter>
+            </Style>
+            <Style x:Key="StandardLabelTitle" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="FontFamily" Value="Verdana"></Setter>
+                <Setter Property="FontSize" Value="Medium"></Setter>
+            </Style>
+            <Style x:Key="StandardLabelText" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="FontFamily" Value="Verdana"></Setter>
+                <Setter Property="FontSize" Value="Small"></Setter>
+            </Style>
+
+            <Style x:Key="StandardErrorMessage" TargetType="Label">
+                <Setter Property="Margin" Value="0,5,0,5"></Setter>
+                <Setter Property="FontFamily" Value="Verdana"></Setter>
+                <Setter Property="TextColor" Value="Red"></Setter>
+            </Style>
+
+            <!--Button Styles-->
+            <Style x:Key="StandardButton" TargetType="Button">
+                <Setter Property="Margin" Value="5">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness" Android="25" Default="25"></OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BackgroundColor" Value="Transparent">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Color" Android="Blue" Default="Green"></OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontFamily" Value="Verdana"></Setter>
+                <Setter Property="BorderRadius" Value="25"></Setter>
+                <Setter Property="BorderWidth" Value="0"></Setter>
+            </Style>
+            
+             <!--Entry Styles--> 
+            <Style x:Key="FormEntry" TargetType="Entry">
+                <Setter Property="Margin" Value="20,5,20,5"></Setter>
+                <Setter Property="FontFamily" Value="Verdana"></Setter>
+            </Style>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

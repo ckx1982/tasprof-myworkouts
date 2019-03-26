@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Tasprof.Apps.MyWorkouts.ViewModels"
+             x:Class="Tasprof.Apps.MyWorkouts.Views.DashboardView">
+    <ContentPage.BindingContext>
+        <local:DashboardViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*"></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="0.2*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="10">
+                <BoxView Grid.Column="0" VerticalOptions="Center" Color="LightBlue" CornerRadius="15" HeightRequest="60"></BoxView>
+                <StackLayout Grid.Column="0" VerticalOptions="Center">
+                    <Label Text="NUMBER OF WORKOUTS" Style="{StaticResource StandardLabelTitle}"></Label>
+                    <Label Text="{Binding NumberOfWorkouts}" Style="{StaticResource StandardLabelText}"></Label>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <StackLayout Grid.Column="0"  VerticalOptions="Center">
+                    <Label Text="LATEST WORKOUT"  Style="{StaticResource StandardLabelTitle}"></Label>
+                    <Label Text="17/07/2018" Style="{StaticResource StandardLabelText}"></Label>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <StackLayout Grid.Column="0"  VerticalOptions="Center" BackgroundColor="Azure">
+                    <Button x:Name="btnUpdateDashboard" Text="Update Dashboard" Command="{Binding UpdateDashboardCommand}" />
+                </StackLayout>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

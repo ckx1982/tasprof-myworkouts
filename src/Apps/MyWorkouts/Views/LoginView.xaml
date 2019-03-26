@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tasprof.Apps.MyWorkouts.Views.LoginView">
+
+    <Grid RowSpacing="10" ColumnSpacing="10" Margin="15" VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" x:Name="UsernameValidation" VerticalOptions="End" 
+               Text="{Binding Username.Errors, Converter={StaticResource FirstValidationErrorConverter}}" 
+               IsVisible="{Binding IsValid, Converter={StaticResource InvertBoolConverter}}" Style="{StaticResource StandardErrorMessage}"></Label>
+        <Entry Grid.Row="1" x:Name="UsernameEntry" Placeholder="Username"
+               Text="{Binding Username.Value, Mode=TwoWay}"></Entry>
+        <Label Grid.Row="2" x:Name="PasswordValidation" VerticalOptions="End" 
+               Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+               IsVisible="{Binding IsValid, Converter={StaticResource InvertBoolConverter}}" Style="{StaticResource StandardErrorMessage}"></Label>
+        <Entry Grid.Row="3" x:Name="PasswordEntry" Placeholder="Password"
+               IsPassword="True" Text="{Binding Password.Value, Mode=TwoWay}"></Entry>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" x:Name="LoginButton" Text="Login" Command="{Binding SignInCommand}" Style="{StaticResource StandardButton}"></Button>
+            <Button Grid.Column="1" x:Name="Register" Text="Register" Command="{Binding RegisterCommand}" Style="{StaticResource StandardButton}"></Button>
+        </Grid>
+
+        <ActivityIndicator Grid.Row="5" 
+                           IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           Color="Blue"
+                           HeightRequest="30"
+                           WidthRequest="50"
+                           >
+        </ActivityIndicator>
+
+    </Grid>
+</ContentPage>
